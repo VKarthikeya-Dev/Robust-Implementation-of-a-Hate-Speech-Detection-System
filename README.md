@@ -33,67 +33,88 @@ Model Training (SVM / NB / RNN / BERT)
 Model Evaluation (Accuracy, Precision, Recall, F1)
         ↓
 Deployment (Flask / FastAPI)
+```
 
 
----
+## 5. Implementation
 
-## 5. Implementation Details
+The implementation of the Hate Speech Detection System is carried out in Jupyter Notebook.  
+The process includes preparing the dataset, transforming the text, training the model, and evaluating its performance.
 
-### ✔ Data Preprocessing
-- Tokenization  
+### 5.1 Data Preprocessing
+The following steps are applied to clean and prepare the text data:
+
+- Converting all text to lowercase  
+- Removing special characters, URLs, symbols, and numbers  
+- Tokenization of sentences into words  
 - Stop-word removal  
-- Stemming / Lemmatization  
-- Cleaning special characters  
-- Handling imbalanced datasets (if required)
+- Applying stemming or lemmatization to normalize words  
 
-### ✔ Feature Extraction
-- TF-IDF Vectorizer  
-- Bag-of-Words  
+These steps help reduce noise in the dataset and improve model performance.
 
-### ✔ Model Training
-Models commonly used in this project:
-- Naive Bayes  
-- Support Vector Machine (SVM)
+### 5.2 Feature Extraction
+After preprocessing, the text is converted into numerical features using:
 
-### ✔ Model Evaluation
-Metrics used:
+- **Bag-of-Words (BoW)**  
+- **TF-IDF Vectorizer**
+
+These methods transform text into a format that machine learning algorithms can understand.
+
+### 5.3 Model Training
+The preprocessed and vectorized data is used to train machine learning classifiers.  
+Common models used include:
+
+- **Naive Bayes**  
+- **Support Vector Machine (SVM)**  
+
+The dataset is split into training and testing sets to evaluate how well the model generalizes.
+
+### 5.4 Model Evaluation
+The performance of the model is measured using standard metrics:
+
 - Accuracy  
 - Precision  
 - Recall  
 - F1-Score  
 
+These metrics help understand how correctly the model identifies hate speech, offensive language, and clean text.
+
+### 5.5 Output
+The system classifies each input text into one of the following categories:
+
+#### **Hate Speech Detected**
+Text that promotes hostility, violence, or discrimination toward a group or individual.
+
+#### **Offensive Language Detected**
+Text containing insulting or rude language but not explicitly hateful.
+
+#### **No Hate / Clean Speech**
+Neutral or respectful content without harmful expressions.
+
+Example outputs include:
+
+- *“I hate people like you” → Hate Speech Detected*  
+- *“You are annoying” → Offensive Language Detected*  
+- *“Everyone is welcome here” → No Hate / Clean Speech*  
+
 ---
 
-## 6. Output
-
-### Hate Speech Detected  
-The input text is classified as harmful or abusive and targets a specific group or individual.
-
-### Offensive Language Detected  
-The text contains rude or insulting language but does not qualify as hate speech.
-
-### No Hate / Clean Speech  
-Neutral or respectful text with no harmful intent.
+## 6. Future Scope
+- Support for multilingual and mixed-language datasets  
+- Improved handling of sarcasm and context  
+- Integration with deep learning models (RNN, Transformers)  
+- Real-time deployment using web frameworks or APIs  
 
 ---
 
-## 7. Future Scope
-- Better multilingual and code-mixed text support  
-- Improved contextual understanding  
-- Integration with deep learning models  
-- Deployment as a real-time moderation tool  
-
----
-
-## 8. Conclusion
-
-This project demonstrates a simple and practical approach for detecting hate speech using basic ML and NLP methods.  
-By preprocessing text, extracting features, training models, and evaluating performance, the system can classify text into hate, offensive, and clean categories based on the dataset used.
+## 7. Conclusion
+This project demonstrates a simple but effective approach to detecting hate speech using basic NLP and machine learning techniques.  
+Through preprocessing, feature extraction, model training, and evaluation, the system can categorize text into hate speech, offensive language, or clean speech.  
+The results show that machine learning can assist in moderating online content and improving digital safety.
 
 ---
 
 ## Authors
 - **Dr. Vidya Lakshmi V**  
 - **V Karthikeya Reddy**
-
 
